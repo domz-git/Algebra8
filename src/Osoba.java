@@ -1,14 +1,14 @@
 import java.util.ArrayList;
 
-public class Osoba {
+public abstract class Osoba implements Zivi, Jede, Spava{
 
     private String OIB;
     private String ime;
     private String prezime;
-    private String adresa;
+    private Adresa adresa;
     private ArrayList<Zivotinja> ljubimci = new ArrayList<Zivotinja>();
 
-    public Osoba(String OIB, String ime, String prezime, String adresa, ArrayList<Zivotinja> ljubimci) {
+    public Osoba(String OIB, String ime, String prezime, Adresa adresa, ArrayList<Zivotinja> ljubimci) {
         this.OIB = OIB;
         this.ime = ime;
         this.prezime = prezime;
@@ -40,11 +40,11 @@ public class Osoba {
         this.prezime = prezime;
     }
 
-    public String getAdresa() {
+    public Adresa getAdresa() {
         return adresa;
     }
 
-    public void setAdresa(String adresa) {
+    public void setAdresa(Adresa adresa) {
         this.adresa = adresa;
     }
 
@@ -56,16 +56,21 @@ public class Osoba {
         this.ljubimci = ljubimci;
     }
 
-    private String zivi(){
-        return "zivi";
+
+    @Override
+    public String jede() {
+        return "";
     }
 
-    private String jede(){
-        return "jede";
+    @Override
+    public String Spava() {
+        return "";
     }
 
-    private String spava(){
-        return "spava";
+    @Override
+    public String zivi() {
+        return "";
     }
 
+    public abstract String spava();
 }

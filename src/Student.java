@@ -6,7 +6,7 @@ public class Student extends Osoba{
     private String fakultet;
     private int godinaStudiranja;
 
-    public Student(String OIB, String ime, String prezime, String adresa, ArrayList<Zivotinja> ljubimci, String JMBAG, String fakultet, int godinaStudiranja) {
+    public Student(String OIB, String ime, String prezime, Adresa adresa, ArrayList<Zivotinja> ljubimci, String JMBAG, String fakultet, int godinaStudiranja) {
         super(OIB, ime, prezime, adresa, ljubimci);
         this.JMBAG = JMBAG;
         this.fakultet = fakultet;
@@ -37,7 +37,18 @@ public class Student extends Osoba{
         this.godinaStudiranja = godinaStudiranja;
     }
 
-    private String uci(){
-        return "uci";
+    @Override
+    public String zivi(){
+        return "zivi nekad";
+    }
+
+    @Override
+    public String jede(){
+        return "jede meso";
+    }
+
+    @Override
+    public String spava(){
+        return "spava 10 sati";
     }
 }
